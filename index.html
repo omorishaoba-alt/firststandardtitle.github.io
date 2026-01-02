@@ -1,50 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>First Standard Title Limited (FSTL) - Title & Mortgage Insurance Nigeria</title>
-<meta name="description" content="First Standard Title Limited (FSTL) - Pioneers of Title and Mortgage Insurance in Nigeria. Trusted, Reliable, Professional.">
-<meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="7f3fbf8b6a7f3037" />
-<style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; color:#333; }
-header { background:#004080; color:white; padding:2rem; text-align:center; }
-nav a { color:white; margin:0 1rem; text-decoration:none; font-weight:bold; }
-nav a:hover { text-decoration:underline; }
-main { padding:2rem; max-width:800px; margin:auto; }
-footer { background:#f0f0f0; color:#555; text-align:center; padding:1rem; margin-top:2rem; font-size:0.9rem; }
-h1,h2 { margin-bottom:1rem; }
-p { margin-bottom:1rem; }
-a { color:#004080; text-decoration:none; }
-a:hover { text-decoration:underline; }
-</style>
+  <meta charset="UTF-8">
+  <title>FSTL – First Standard Title Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FSTL – Digital Title Verification, Trust Infrastructure & Zero-Cost Revenue Engine">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; line-height:1.6; }
+    nav { background:#000; padding:15px; position:sticky; top:0; z-index:100; }
+    nav a { color:#fff; margin-right:15px; text-decoration:none; font-weight:bold; }
+    section { padding:40px 20px; background:#fff; margin-bottom:10px; }
+    h1,h2 { color:#000; }
+    .box { background:#eee; padding:20px; margin-top:15px; }
+    input,button { padding:10px; margin:5px 0; width:100%; }
+    button { background:#000; color:#fff; border:none; cursor:pointer; }
+    button:hover { opacity:0.9; }
+    footer { background:#000; color:#fff; text-align:center; padding:20px; font-size:14px; }
+  </style>
 </head>
 <body>
-<header>
-    <h1>First Standard Title Limited (FSTL)</h1>
-    <p>Pioneers of Title and Mortgage Insurance in Nigeria</p>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="resources.html">Resources</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-<main>
-<section>
-    <h2>Welcome to FSTL</h2>
-    <p>We provide reliable title and mortgage insurance solutions across Nigeria.</p>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#search">AI Search</a>
+  <a href="#verify">Verify</a>
+  <a href="#agents">Agents</a>
+  <a href="#payment">Payments</a>
+  <a href="#institution">Institution</a>
+</nav>
+
+<section id="home">
+  <h1>First Standard Title Limited (FSTL)</h1>
+  <p>FSTL is Nigeria’s trust infrastructure for digital title verification, transaction validation, and institutional confidence.</p>
+  <div class="box">
+    <strong>Operating Principle:</strong><br>
+    Input → Transaction → Output<br>
+    Zero Infrastructure. Immediate Revenue. Silent Scale.
+  </div>
 </section>
-<section>
-    <h2>Our Mission</h2>
-    <p>To protect property owners, lenders, and investors with trustworthy title and mortgage insurance.</p>
+
+<section id="search">
+  <h2>FSTL AI Search & Verification</h2>
+  <p>Search, validate, and confirm FSTL-issued receipts and verification references instantly.</p>
+  <div class="box">
+    <input type="text" placeholder="Enter Reference ID" id="searchRef">
+    <button onclick="searchUI()">Search</button>
+    <p id="searchResult" style="margin-top:10px;"></p>
+  </div>
 </section>
-</main>
+
+<section id="verify">
+  <h2>Receipt & Transaction Verification</h2>
+  <div class="box" id="verifyBox">
+    ✔ Bank-confirmed receipts<br>
+    ✔ Agent commission validation<br>
+    ✔ Immutable audit trail
+  </div>
+</section>
+
+<section id="agents">
+  <h2>Agents & Miners</h2>
+  <div class="box">
+    <ul>
+      <li>Immediate commission confirmation</li>
+      <li>Direct bank-backed receipts</li>
+      <li>No app install required</li>
+      <li>Zero capital entry</li>
+    </ul>
+  </div>
+</section>
+
+<section id="payment">
+  <h2>Pay FSTL (Direct Bank Transfer)</h2>
+  <div class="box">
+    Bank: <em>[Your Bank Name]</em><br>
+    Account Name: <em>First Standard Title Limited</em><br>
+    Account Number: <em>[XXXXXXX]</em><br>
+    <strong>Use your Reference ID as Narration</strong>
+  </div>
+</section>
+
+<section id="institution">
+  <h2>Institutional Verification Portal</h2>
+  <p>Restricted to authorized institutional users. Enter credentials to verify transactions.</p>
+
+  <input id="instAgent" placeholder="Institution Agent ID">
+  <input id="instKey" placeholder="Access Key / PIN">
+  <input id="instBuyer" placeholder="Buyer Name">
+  <input id="instAmount" placeholder="Amount">
+  <input id="instBankRef" placeholder="Bank Reference">
+  <button onclick="institutionUI()">Verify Transaction</button>
+
+  <div class="box" id="institutionResult"></div>
+</section>
+
 <footer>
-<p>&copy; 2026 First Standard Title Limited (FSTL). All rights reserved.</p>
+  © First Standard Title Limited (FSTL)<br>
+  Digital Trust • Verification • Infrastructure
 </footer>
+
+<script>
+  // ===== Hidden FSTL API =====
+  const transactionDB = [];
+  const authorizedInstitutions = { "INST-2026-XYZ":"PIN1234", "INST-2026-ABC":"PIN5678" };
+
+  async function generateVerification(agent,buyer,amount,bankRef){
+    const raw = `FSTL|${agent}|${buyer}|${amount}|${bankRef}|${Date.now()}`;
+    const buffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw));
+    const hash = Array.from(new Uint8Array(buffer)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    return "FSTL-" + hash.slice(0,10).toUpperCase();
+  }
+
+  async function submitTransaction(agent,buyer,amount,bankRef){
+    const code = await generateVerification(agent,buyer,amount,bankRef);
+    const timestamp = new Date().toISOString();
+    transactionDB.push({agent,buyer,amount,bankRef,verificationCode:code,timestamp});
+    return {status:"VERIFIED", verificationCode:code, timestamp};
+  }
+
+  async function institutionalVerify(agent,key,buyer,amount,bankRef){
+    if(!authorizedInstitutions[agent] || authorizedInstitutions[agent]!==key){
+      return {status:"ACCESS_DENIED"};
+    }
+    return await submitTransaction(agent,buyer,amount,bankRef);
+  }
+
+  function searchTransaction(ref){
+    const tx = transactionDB.find(t=>t.verificationCode===ref.toUpperCase());
+    return tx ? {...tx,status:"VERIFIED"} : {status:"NOT_FOUND"};
+  }
+
+  // ===== UI FUNCTIONS =====
+  async function searchUI(){
+    const ref = document.getElementById("searchRef").value.trim();
+    if(!ref){ document.getElementById("searchResult").innerText="Enter Reference ID"; return; }
+    const result = searchTransaction(ref);
+    if(result.status==="VERIFIED"){
+      document.getElementById("searchResult").innerHTML = `🔒 VERIFIED<br>Verification Code: ${result.verificationCode}<br>Timestamp: ${result.timestamp}`;
+    } else {
+      document.getElementById("searchResult").innerText="Reference NOT FOUND";
+    }
+  }
+
+  async function institutionUI(){
+    const agent = document.getElementById("instAgent").value.trim().toUpperCase();
+    const key = document.getElementById("instKey").value.trim();
+    const buyer = document.getElementById("instBuyer").value.trim();
+    const amount = document.getElementById("instAmount").value.trim();
+    const bank = document.getElementById("instBankRef").value.trim();
+
+    const res = await institutionalVerify(agent,key,buyer,amount,bank);
+    if(res.status==="ACCESS_DENIED"){
+      document.getElementById("institutionResult").innerHTML="<strong>Access Denied</strong>";
+    } else {
+      document.getElementById("institutionResult").innerHTML=
+        `<strong>Status:</strong> VERIFIED<br>` +
+        `<strong>Verification Code:</strong> ${res.verificationCode}<br>` +
+        `<strong>Timestamp:</strong> ${res.timestamp}`;
+    }
+  }
+</script>
+
 </body>
 </html>

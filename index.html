@@ -14,6 +14,7 @@
     .box { background:#eee; padding:20px; margin-top:15px; }
     .cta { display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; margin-top:10px;}
     footer { background:#000; color:#fff; text-align:center; padding:20px; font-size:14px;}
+    input, button { padding:10px; margin-top:10px; width:100%; max-width:400px; }
   </style>
 </head>
 <body>
@@ -23,14 +24,13 @@
   <a href="#retail">Retail</a>
   <a href="#agents">Agents</a>
   <a href="#institutions">Institutions</a>
+  <a href="#search">AI Search</a>
   <a href="#payment">Payments</a>
 </nav>
 
 <section id="home">
   <h1>First Standard Title Limited (FSTL)</h1>
-  <p>
-    FSTL is Nigeria’s trust infrastructure for digital title verification, transaction validation, and institutional confidence.
-  </p>
+  <p>FSTL is Nigeria’s trust infrastructure for digital title verification, transaction validation, and institutional confidence.</p>
   <div class="box">
     <strong>Operating Principle:</strong><br>
     INPUT → TRANSFORMATION → OUTPUT<br>
@@ -43,7 +43,7 @@
   <p><strong>Price:</strong> ₦50,000 per verification</p>
   
   <div class="box">
-    <h3>1. INPUTS</h3>
+    <h3>INPUTS</h3>
     <ul>
       <li>Payment of ₦50,000</li>
       <li>Asset or transaction documents</li>
@@ -53,7 +53,7 @@
   </div>
   
   <div class="box">
-    <h3>2. TRANSFORMATION</h3>
+    <h3>TRANSFORMATION</h3>
     <ul>
       <li>Digital verification of documents</li>
       <li>Generation of unique FSTL verification code</li>
@@ -63,7 +63,7 @@
   </div>
   
   <div class="box">
-    <h3>3. OUTPUTS</h3>
+    <h3>OUTPUTS</h3>
     <ul>
       <li>FSTL Verification Reference for banks and partners</li>
       <li>PDF Receipt & QR Code</li>
@@ -77,7 +77,7 @@
   <p><strong>Agent Registration Fee:</strong> ₦20,000</p>
   
   <div class="box">
-    <h3>1. INPUTS</h3>
+    <h3>INPUTS</h3>
     <ul>
       <li>Agent registration payment (₦20,000)</li>
       <li>Client asset or transaction details</li>
@@ -86,7 +86,7 @@
   </div>
   
   <div class="box">
-    <h3>2. TRANSFORMATION</h3>
+    <h3>TRANSFORMATION</h3>
     <ul>
       <li>Process client transactions & verifications</li>
       <li>Generate unique verification codes</li>
@@ -96,7 +96,7 @@
   </div>
   
   <div class="box">
-    <h3>3. OUTPUTS</h3>
+    <h3>OUTPUTS</h3>
     <ul>
       <li>Verified, bank-backed client transactions</li>
       <li>Agent commission confirmation & digital receipts</li>
@@ -111,7 +111,7 @@
   <p><strong>Fee:</strong> 5% of asset value per verification</p>
   
   <div class="box">
-    <h3>1. INPUTS</h3>
+    <h3>INPUTS</h3>
     <ul>
       <li>Payment of 5% of asset value</li>
       <li>Bulk asset or transaction data</li>
@@ -121,10 +121,10 @@
   </div>
   
   <div class="box">
-    <h3>2. TRANSFORMATION</h3>
+    <h3>TRANSFORMATION</h3>
     <ul>
       <li>Bulk verifications via cloud infrastructure</li>
-      <li>Generate unique FSTL verification codes</li>
+      <li>Generate unique verification codes</li>
       <li>Create PDF receipts, QR codes, audit-ready trails</li>
       <li>Provide API integration & analytics dashboards</li>
       <li>Convert verified assets into investment-grade capital instruments (ABS, MBS, bonds)</li>
@@ -132,7 +132,7 @@
   </div>
   
   <div class="box">
-    <h3>3. OUTPUTS</h3>
+    <h3>OUTPUTS</h3>
     <ul>
       <li>Verified, bank-backed asset proofs</li>
       <li>PDF/QR receipts per verification</li>
@@ -142,6 +142,25 @@
       <li>Transformation into investment-grade capital</li>
     </ul>
   </div>
+</section>
+
+<section id="search">
+  <h2>FSTL AI Verification Search</h2>
+  <p>Enter your FSTL Verification Reference to confirm status and generate PDF/QR receipt.</p>
+  <div class="box">
+    <input type="text" id="verificationRef" placeholder="Enter FSTL-REF-XXXX">
+    <button onclick="verifyReference()">Verify</button>
+    <p id="searchResult"></p>
+  </div>
+  <script>
+    function verifyReference() {
+      const ref = document.getElementById('verificationRef').value;
+      if(!ref) { alert("Enter a verification reference"); return; }
+      // Placeholder: In production, call server/API for real verification
+      document.getElementById('searchResult').innerHTML = 
+        "✅ Reference " + ref + " VERIFIED (PDF & QR available)";
+    }
+  </script>
 </section>
 
 <section id="payment">

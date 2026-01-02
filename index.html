@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <title>FSTL – First Standard Title Limited</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FSTL – Digital Title Verification, Trust Infrastructure & Revenue Engine">
+  <meta name="description" content="FSTL – Digital Title Verification, Trust Infrastructure & Zero-Cost Revenue Engine">
   <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; line-height:1.6;}
-    nav { background:#000; padding:15px; position:sticky; top:0; z-index:1000;}
-    nav a { color:#fff; margin-right:15px; text-decoration:none; font-weight:bold;}
-    section { padding:40px 20px; background:#fff; margin-bottom:10px;}
-    h1,h2,h3 { color:#000; }
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; line-height:1.6; }
+    nav { background:#000; padding:15px; position:sticky; top:0; }
+    nav a { color:#fff; margin-right:15px; text-decoration:none; font-weight:bold; }
+    section { padding:40px 20px; background:#fff; margin-bottom:10px; }
+    h1,h2 { color:#000; }
+    .cta { display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; margin-top:10px; }
     .box { background:#eee; padding:20px; margin-top:15px; }
-    .cta { display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; margin-top:10px;}
-    footer { background:#000; color:#fff; text-align:center; padding:20px; font-size:14px;}
+    footer { background:#000; color:#fff; text-align:center; padding:20px; font-size:14px; }
     input, button { padding:10px; margin-top:10px; width:100%; max-width:400px; }
   </style>
 </head>
@@ -23,7 +23,7 @@
   <a href="#home">Home</a>
   <a href="#retail">Retail</a>
   <a href="#agents">Agents</a>
-  <a href="#institutions">Institutions</a>
+  <a href="#institution">Institution</a>
   <a href="#search">AI Search</a>
   <a href="#payment">Payments</a>
 </nav>
@@ -33,139 +33,64 @@
   <p>FSTL is Nigeria’s trust infrastructure for digital title verification, transaction validation, and institutional confidence.</p>
   <div class="box">
     <strong>Operating Principle:</strong><br>
-    INPUT → TRANSFORMATION → OUTPUT<br>
+    Input → Transaction → Output<br>
     Zero Infrastructure. Immediate Revenue. Silent Scale.
   </div>
 </section>
 
 <section id="retail">
-  <h2>Retail Users – Flat Rate Verification</h2>
-  <p><strong>Price:</strong> ₦50,000 per verification</p>
-  
+  <h2>Retail Users – Transform Assets into Capital</h2>
+  <p>Flat-rate FSTL verification: ₦50,000. Individuals can verify directly or through agents.</p>
   <div class="box">
-    <h3>INPUTS</h3>
-    <ul>
-      <li>Payment of ₦50,000</li>
-      <li>Asset or transaction documents</li>
-      <li>Personal identification (ID, BVN, contact info)</li>
-      <li>Relevant references</li>
-    </ul>
+    <strong>Input:</strong> Raw assets, documents, or titles<br>
+    <strong>Transformation:</strong> Verification & Collateralization<br>
+    <strong>Output:</strong> Bank-backed receipts, PDF & QR, usable as investment-grade collateral
   </div>
-  
-  <div class="box">
-    <h3>TRANSFORMATION</h3>
-    <ul>
-      <li>Digital verification of documents</li>
-      <li>Generation of unique FSTL verification code</li>
-      <li>PDF receipts and QR codes for proof</li>
-      <li>Optional audit trail for institutional use</li>
-    </ul>
-  </div>
-  
-  <div class="box">
-    <h3>OUTPUTS</h3>
-    <ul>
-      <li>FSTL Verification Reference for banks and partners</li>
-      <li>PDF Receipt & QR Code</li>
-      <li>Bank-backed assurance</li>
-    </ul>
-  </div>
+  <input id="retailRef" type="text" placeholder="Enter your asset reference">
+  <button onclick="generateReceipt('RETAIL', document.getElementById('retailRef').value,50000)">Generate Receipt</button>
 </section>
 
 <section id="agents">
   <h2>Agents & Miners</h2>
-  <p><strong>Agent Registration Fee:</strong> ₦20,000</p>
-  
+  <p>Agents earn commissions by onboarding clients and submitting transactions. No app required, smartphone only.</p>
   <div class="box">
-    <h3>INPUTS</h3>
+    <strong>Agent Benefits:</strong>
     <ul>
-      <li>Agent registration payment (₦20,000)</li>
-      <li>Client asset or transaction details</li>
-      <li>Agent identification and contact info</li>
+      <li>Immediate commission confirmation</li>
+      <li>Direct bank-backed receipts</li>
+      <li>Zero capital entry</li>
     </ul>
   </div>
-  
-  <div class="box">
-    <h3>TRANSFORMATION</h3>
-    <ul>
-      <li>Process client transactions & verifications</li>
-      <li>Generate unique verification codes</li>
-      <li>Create PDF receipts, QR codes, audit-ready digital trails</li>
-      <li>Track agent commissions and confirm payouts</li>
-    </ul>
-  </div>
-  
-  <div class="box">
-    <h3>OUTPUTS</h3>
-    <ul>
-      <li>Verified, bank-backed client transactions</li>
-      <li>Agent commission confirmation & digital receipts</li>
-      <li>Audit-ready, immutable records</li>
-      <li>Performance analytics dashboards</li>
-    </ul>
-  </div>
+  <input id="agentRef" type="text" placeholder="Enter client transaction reference">
+  <input id="agentId" type="text" placeholder="Enter your Agent ID">
+  <button onclick="agentCommission(document.getElementById('agentId').value, document.getElementById('agentRef').value,5000)">Confirm Commission</button>
 </section>
 
-<section id="institutions">
-  <h2>Institutions & Government Access</h2>
-  <p><strong>Fee:</strong> 5% of asset value per verification</p>
-  
+<section id="institution">
+  <h2>Institutional & Government Partners</h2>
+  <p>Transform large assets into investment-grade capital (ABS, MBS, Corporate Bonds, Municipal Bonds)</p>
   <div class="box">
-    <h3>INPUTS</h3>
-    <ul>
-      <li>Payment of 5% of asset value</li>
-      <li>Bulk asset or transaction data</li>
-      <li>Authorized institutional contacts & API credentials</li>
-      <li>Compliance/reporting requirements</li>
-    </ul>
+    <strong>Input:</strong> Asset portfolios<br>
+    <strong>Transformation:</strong> FSTL verification and documentation<br>
+    <strong>Output:</strong> Investment-grade verification, PDF & QR, verifiable by banks<br>
+    <em>Rate: 5% of total asset value</em>
   </div>
-  
-  <div class="box">
-    <h3>TRANSFORMATION</h3>
-    <ul>
-      <li>Bulk verifications via cloud infrastructure</li>
-      <li>Generate unique verification codes</li>
-      <li>Create PDF receipts, QR codes, audit-ready trails</li>
-      <li>Provide API integration & analytics dashboards</li>
-      <li>Convert verified assets into investment-grade capital instruments (ABS, MBS, bonds)</li>
-    </ul>
-  </div>
-  
-  <div class="box">
-    <h3>OUTPUTS</h3>
-    <ul>
-      <li>Verified, bank-backed asset proofs</li>
-      <li>PDF/QR receipts per verification</li>
-      <li>Real-time API access</li>
-      <li>Audit-ready records for compliance</li>
-      <li>Analytics & insights</li>
-      <li>Transformation into investment-grade capital</li>
-    </ul>
-  </div>
+  <input id="instId" type="text" placeholder="Institution ID">
+  <input id="instRef" type="text" placeholder="Asset reference">
+  <button onclick="institutionVerify(document.getElementById('instId').value, document.getElementById('instRef').value)">Verify Asset</button>
 </section>
 
 <section id="search">
-  <h2>FSTL AI Verification Search</h2>
-  <p>Enter your FSTL Verification Reference to confirm status and generate PDF/QR receipt.</p>
-  <div class="box">
-    <input type="text" id="verificationRef" placeholder="Enter FSTL-REF-XXXX">
-    <button onclick="verifyReference()">Verify</button>
-    <p id="searchResult"></p>
-  </div>
-  <script>
-    function verifyReference() {
-      const ref = document.getElementById('verificationRef').value;
-      if(!ref) { alert("Enter a verification reference"); return; }
-      // Placeholder: In production, call server/API for real verification
-      document.getElementById('searchResult').innerHTML = 
-        "✅ Reference " + ref + " VERIFIED (PDF & QR available)";
-    }
-  </script>
+  <h2>AI Verification Search</h2>
+  <p>Search and verify FSTL-issued receipts, transactions, and verification references.</p>
+  <input id="verificationRef" type="text" placeholder="Enter FSTL reference">
+  <button onclick="verifyReference()">Verify</button>
+  <p id="searchResult"></p>
 </section>
 
 <section id="payment">
-  <h2>Pay FSTL – Direct Bank Transfer</h2>
-  <p>All payments are made directly to the FSTL bank account. No third-party processors.</p>
+  <h2>Pay FSTL (Direct Bank Transfer)</h2>
+  <p>All payments are made directly to the FSTL bank account. No intermediaries.</p>
   <div class="box">
     Bank: <em>[Your Bank Name]</em><br>
     Account Name: <em>First Standard Title Limited</em><br>
@@ -175,9 +100,47 @@
 </section>
 
 <footer>
-  © First Standard Title Limited (FSTL)<br>
-  Digital Trust • Verification • Infrastructure
+  © First Standard Title Limited (FSTL) • Digital Trust • Verification • Infrastructure
 </footer>
+
+<script>
+async function generateReceipt(type, ref, amount){
+  const res = await fetch('/api/generateReceipt',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({type,ref,amount})
+  });
+  const data = await res.json();
+  alert(`Receipt & QR generated: ${data.pdf_url}`);
+}
+
+async function agentCommission(agentId, ref, amount){
+  const res = await fetch('/api/agentCommission',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({agent_id:agentId, ref, amount})
+  });
+  const data = await res.json();
+  alert(`Commission confirmed: ₦${data.amount}`);
+}
+
+async function verifyReference(){
+  const ref=document.getElementById('verificationRef').value;
+  const res = await fetch(`/api/verifyReference?ref=${ref}`);
+  const data = await res.json();
+  document.getElementById('searchResult').innerText = `Verified: ${data.ref} (${data.status})`;
+}
+
+async function institutionVerify(instId, assetRef){
+  const res = await fetch('/api/institutionVerify',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({institution_id:instId, assets:[{asset_id:assetRef,value:1000000}]})
+  });
+  const data = await res.json();
+  alert(`Institution verified: ${data.verification_codes}`);
+}
+</script>
 
 </body>
 </html>

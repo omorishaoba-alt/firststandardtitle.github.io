@@ -1,25 +1,85 @@
 const functions = require("firebase-functions");
-const admin = require("firebase-admin");
+const express = require("express");
+const cors = require("cors");
 const PDFDocument = require("pdfkit");
 const QRCode = require("qrcode");
 const fs = require("fs");
-admin.initializeApp();
+const path = require("path");
 
-const app = require("express")();
-const cors = require("cors");
-app.use(cors({origin:true}));
+const app = express();
+app.use(cors({ origin: true }));
+app.use(express.json());
 
-// Retail / Reference Verification
-app.get("/verifyReference", async (req,res)=>{
-  const ref = req.query.ref;
-  res.json({ref: ref, status:"VERIFIED", verification_code:`FSTL-${Date.now()}`});
+/**
+ * INTERNAL: Generate Verification Code
+ */
+function generateCode(prefix="FSTL") {
+  return `${prefix}-${Date.now()}-${Math.floor(Math.random()*1000)}`;
+}
+
+/**
+ * INTERNAL: Generate PDF Receipt
+ */
+async function generatePDF(data) {
+  const filePath = path.join("/tmp", `${data.code}.pdf`);
+  const doc = new PDFDocument();
+
+  const qr = await QRCode.toDataURL(
+    `https://fstl.com.ng/verify?ref=${data.code}`
+  );
+
+  doc.pipe(fs.createWriteStream(filePath));
+  doc.fontSize(18).text("FIRST STANDARD TITLE LIMITED", { align: "center" });
+  doc.moveDown();
+  doc.fontSize(12).text(`Verification Code: ${data.code}`);
+  doc.text(`Amount: ₦${data.amount}`);
+  doc.text(`Bank Reference: ${data.bank_ref}`);
+  doc.text(`Date: ${new Date().toISOString()}`);
+  doc.moveDown();
+  doc.image(qr, { width: 120 });
+  doc.text("Scan to Verify", { align: "center" });
+  doc.end();
+
+  return filePath;
+}
+
+/**
+ * 🔑 REVENUE ENTRY POINT (RETAIL + AGENT)
+ * NOT exposed on frontend
+ */
+app.post("/internal/process-payment", async (req, res) => {
+  const { bank_ref, amount, channel } = req.body;
+
+  if (!bank_ref || !amount) {
+    return res.status(400).json({ status: "ERROR" });
+  }
+
+  const code = generateCode(channel === "INSTITUTION" ? "FSTL-INS" : "FSTL-RET");
+
+  await generatePDF({
+    code,
+    amount,
+    bank_ref
+  });
+
+  res.json({
+    status: "VERIFIED",
+    verification_code: code
+  });
 });
 
-// Institution Verification
-app.post("/institutionVerify", async (req,res)=>{
-  const {institution_id, assets} = req.body;
-  const verification_codes = assets.map(a => `FSTL-${a.asset_id}-${Date.now()}`);
-  res.json({institution_id, verification_codes});
+/**
+ * 🔍 PUBLIC VERIFICATION (READ ONLY)
+ */
+app.get("/verify", async (req, res) => {
+  const ref = req.query.ref;
+  if (!ref) return res.status(404).send("Invalid");
+
+  res.json({
+    ref,
+    status: "VALID",
+    issuer: "First Standard Title Limited"
+  });
 });
 
 exports.app = functions.https.onRequest(app);

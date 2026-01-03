@@ -1,248 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FSTL – First Standard Title Limited</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FSTL – Digital Title Verification, Trust Infrastructure & Zero-Cost Revenue Engine">
-  <style>
-    /* ===== General Styles ===== */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #111;
-      line-height: 1.6;
-    }
-    header, nav, footer {
-      background: #000;
-      color: #fff;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      color: #fff;
-      margin: 5px 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #f5c518;
-    }
-    section {
-      padding: 40px 20px;
-      background: #fff;
-      margin-bottom: 10px;
-    }
-    h1, h2 {
-      color: #000;
-    }
-    h1 { font-size: 2em; margin-bottom: 10px; }
-    h2 { font-size: 1.5em; margin-bottom: 10px; }
-    .cta {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      margin-top: 10px;
-      transition: background 0.3s;
-    }
-    .cta:hover {
-      background: #f5c518;
-      color: #000;
-    }
-    .box {
-      background: #eee;
-      padding: 20px;
-      margin-top: 15px;
-      border-left: 5px solid #000;
-    }
-    input[type=text], input[type=number] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-    button {
-      padding: 10px 20px;
-      background: #000;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #f5c518;
-      color: #000;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-    ul { padding-left: 20px; }
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      nav { flex-direction: column; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FSTL – First Standard Title Limited</title>
+<meta name="description" content="FSTL – Nigeria’s Digital Trust & Capital Operating System">
+<style>
+  body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#111;}
+  nav {background:#000; padding:15px; position:sticky; top:0; z-index:100;}
+  nav a {color:#fff; margin-right:15px; text-decoration:none; font-weight:bold;}
+  section {padding:50px 20px; background:#fff; margin-bottom:10px;}
+  h1,h2,h3 {color:#000;}
+  .cta {display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; margin-top:10px;}
+  .box {background:#eee; padding:20px; margin-top:15px; border-radius:6px;}
+  footer {background:#000; color:#fff; text-align:center; padding:20px; font-size:14px;}
+  table {width:100%; border-collapse:collapse; margin-top:15px;}
+  table, th, td {border:1px solid #ccc;}
+  th, td {padding:10px; text-align:left;}
+  input, select, textarea {width:100%; padding:10px; margin-top:5px; margin-bottom:10px; border:1px solid #ccc; border-radius:4px;}
+  button {padding:12px 20px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer;}
+  button:hover {background:#222;}
+  .highlight {background:#000; color:#fff; padding:2px 6px; border-radius:3px;}
+</style>
 </head>
 <body>
 
-<!-- ===== Header ===== -->
-<header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#retail">Retail</a>
-    <a href="#agents">Agents/Miners</a>
-    <a href="#institutions">Institutions</a>
-    <a href="#osflow">OS Flow</a>
-    <a href="#verify">AI Verification</a>
-    <a href="#payment">Payments</a>
-  </nav>
-</header>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#retail">Retail</a>
+  <a href="#agents">Agents</a>
+  <a href="#institutions">Institutions</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a href="#promise">Promise</a>
+  <a href="#compare">FSTL vs Others</a>
+</nav>
 
-<!-- ===== Home ===== -->
+<!-- HOMEPAGE -->
 <section id="home">
   <h1>First Standard Title Limited (FSTL)</h1>
-  <p>
-    FSTL is Nigeria’s operating system for digital title verification, transaction validation, and institutional trust.
-  </p>
-  <div class="box">
-    <strong>Operating Principle:</strong><br>
-    Input → Transformation → Output → Capital<br>
-    Zero Infrastructure. Immediate Revenue. Silent Scale.
-  </div>
+  <p><strong>Nigeria’s Digital Trust & Capital Operating System</strong></p>
+  <p>Verify → Insure → Collateralise → Access Capital</p>
+  <p>FSTL converts ownership of property and assets into bankable, verified, and insured capital. Zero infrastructure. Immediate value. Silent scale.</p>
+  <a class="cta" href="#retail">Get Started</a>
 </section>
 
-<!-- ===== Retail Users ===== -->
+<!-- RETAIL USERS -->
 <section id="retail">
-  <h2>Retail Users</h2>
-  <p>
-    Affordable verification at a flat rate of ₦50,000 enables individuals to use FSTL services to turn their assets into bankable capital.
-  </p>
+  <h2>Retail Users – Transform Your Assets into Capital</h2>
+  <p>Owning land or property is not enough. Banks lend only on verified collateral. FSTL converts ownership into financial credibility.</p>
   <div class="box">
-    <strong>How it works:</strong><br>
+    <h3>Flat Rate: ₦50,000</h3>
     <ul>
-      <li><strong>Input:</strong> Submit asset information and supporting documents.</li>
-      <li><strong>Transformation:</strong> FSTL verifies and validates your asset digitally.</li>
-      <li><strong>Output:</strong> Receive a bank-backed verification and clean title reference for loan or investment.</li>
+      <li>Verification of property/assets</li>
+      <li>Bank-recognised reference</li>
+      <li>Title insurance eligibility</li>
+      <li>Loan-ready documentation</li>
     </ul>
-    <button onclick="alert('Retail Verification Process Initiated')">Pay & Verify</button>
+    <p><strong>Input → Transformation → Output:</strong></p>
+    <ul>
+      <li><strong>Input:</strong> Submit ownership documents</li>
+      <li><strong>Transformation:</strong> FSTL verifies, standardizes, and insures</li>
+      <li><strong>Output:</strong> Bank-ready collateral, loan eligibility, digital receipt</li>
+    </ul>
+    <button>Start Verification</button>
   </div>
 </section>
 
-<!-- ===== Agents / Miners ===== -->
+<!-- AGENTS -->
 <section id="agents">
-  <h2>Agents & Miners</h2>
-  <p>
-    Agents generate immediate revenue by onboarding clients, processing verifications, and submitting transactions.
-  </p>
+  <h2>Agents – Your Distribution Partners</h2>
+  <p>Agents exist to bridge gaps for individuals who cannot directly use the OS. Same system, same pricing logic.</p>
   <div class="box">
-    <strong>Agent Benefits:</strong>
+    <h3>Agent Benefits</h3>
     <ul>
-      <li>Zero capital entry; smartphone-ready</li>
-      <li>Instant commission on every transaction</li>
-      <li>Direct bank-backed digital receipts</li>
-      <li>Scalable operations; grow your network</li>
+      <li>Immediate commission confirmation</li>
+      <li>Direct bank-backed receipts</li>
+      <li>Minimal capital required</li>
+      <li>Zero infrastructure needed</li>
     </ul>
-    <button onclick="alert('Agent Onboarding Started')">Start Earning</button>
+    <button>Join as Agent</button>
   </div>
 </section>
 
-<!-- ===== Institutions / Government ===== -->
+<!-- INSTITUTIONS -->
 <section id="institutions">
-  <h2>Institutional Users</h2>
-  <p>
-    Transform large portfolios into investment-grade capital. Ideal for banks, funds, and government bodies.
-  </p>
+  <h2>Institutions & Government – Unlock Asset-Based Capital</h2>
+  <p>Transform verified assets into ABS, MBS, corporate bonds, municipal bonds, and structured finance instruments.</p>
   <div class="box">
-    <strong>Service Rate:</strong> 5% of asset value<br><br>
-    <strong>Use Case Examples:</strong>
+    <h3>Institutional Fee</h3>
+    <p>5% of asset value</p>
+    <h3>Benefits</h3>
     <ul>
-      <li>Real estate portfolios → ABS/MBS</li>
-      <li>Corporate bonds and municipal bonds</li>
-      <li>Verified, bank-backed collateral for lending</li>
+      <li>Clean, verified, insured collateral</li>
+      <li>Capital deployable immediately</li>
+      <li>Auditable, immutable verification trail</li>
     </ul>
+    <button>Institutional Access</button>
   </div>
 </section>
 
-<!-- ===== OS Flow ===== -->
-<section id="osflow">
-  <h2>FSTL OS Flow</h2>
-  <p>
-    FSTL operates like any other operating system, silently running in the background, ensuring assets and transactions are verified, digitized, and bankable.
-  </p>
+<!-- PRICING -->
+<section id="pricing">
+  <h2>Pricing Transparency</h2>
+  <ul>
+    <li>Retail Users: ₦50,000 flat rate</li>
+    <li>Institutions: 5% of asset value</li>
+    <li>Agents: Commission only</li>
+    <li>Insurance: Optional, third-party</li>
+  </ul>
+  <p>Transparent pricing builds trust. No hidden costs. No surprises.</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>FAQ</h2>
   <div class="box">
-    <strong>Operational Differences vs GIS / C of O:</strong>
-    <ul>
-      <li>Fully digital verification (no physical delays)</li>
-      <li>Instant, bank-backed proofs and receipts</li>
-      <li>Risk dematerialization; verification translates directly into capital</li>
-      <li>Zero infrastructure overhead; fully scalable</li>
-    </ul>
-    <strong>Flow:</strong> Input → Transformation → Output → Capital
+    <p><strong>Q:</strong> Is FSTL legally recognised?</p>
+    <p><strong>A:</strong> Yes. FSTL works with banks and verified title insurers to provide auditable verification.</p>
+    <p><strong>Q:</strong> Will banks accept FSTL verifications?</p>
+    <p><strong>A:</strong> Yes. Verification is digital, auditable, and insurance-backed.</p>
+    <p><strong>Q:</strong> How do I protect myself?</p>
+    <p><strong>A:</strong> FSTL supports mortgage insurance and optional collateral protection.</p>
+    <p><strong>Q:</strong> How can I reuse the service?</p>
+    <p><strong>A:</strong> Submitting additional assets or properties follows the same flat rate or percentage model.</p>
   </div>
 </section>
 
-<!-- ===== AI Verification ===== -->
-<section id="verify">
-  <h2>AI Verification</h2>
-  <p>
-    Enter your FSTL reference to instantly check verification status and simulate PDF/QR receipt generation.
-  </p>
-  <div class="box">
-    <input type="text" id="fref" placeholder="Enter FSTL-REF-XXXX">
-    <button onclick="simulateVerification()">Verify</button>
-    <p id="verifyResult" style="margin-top:10px;"></p>
-  </div>
+<!-- PROMISE -->
+<section id="promise">
+  <h2>FSTL Promise</h2>
+  <ol>
+    <li>Verify with FSTL</li>
+    <li>Buy title insurance</li>
+    <li>Apply for a loan using verified collateral</li>
+    <li>Buy mortgage insurance</li>
+    <li>Banks cannot deny clean, insured collateral</li>
+  </ol>
+  <p>All risk has been dematerialized.</p>
 </section>
 
-<!-- ===== Payments ===== -->
-<section id="payment">
-  <h2>Payment Instructions</h2>
-  <p>
-    All payments go directly to FSTL bank accounts. No intermediaries.
-  </p>
-  <div class="box">
-    Bank: <em>[Your Bank Name]</em><br>
-    Account Name: <em>First Standard Title Limited</em><br>
-    Account Number: <em>[XXXXXXX]</em><br>
-    Use your FSTL Reference as Narration.
-  </div>
+<!-- COMPARISON -->
+<section id="compare">
+  <h2>FSTL vs GIS vs C of O</h2>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>GIS</th>
+      <th>C of O</th>
+      <th>FSTL</th>
+    </tr>
+    <tr>
+      <td>Purpose</td>
+      <td>Location data</td>
+      <td>Administrative title</td>
+      <td>Bankable, verified collateral</td>
+    </tr>
+    <tr>
+      <td>Bank Acceptability</td>
+      <td>No</td>
+      <td>Conditional</td>
+      <td>Yes, guaranteed</td>
+    </tr>
+    <tr>
+      <td>Verification</td>
+      <td>No</td>
+      <td>Partial</td>
+      <td>Full, auditable, insured</td>
+    </tr>
+    <tr>
+      <td>Financial Use</td>
+      <td>No</td>
+      <td>Limited</td>
+      <td>Immediate, capital-ready</td>
+    </tr>
+    <tr>
+      <td>Accessibility</td>
+      <td>Govt only</td>
+      <td>Applicant only</td>
+      <td>Nationwide, agents + retail</td>
+    </tr>
+  </table>
 </section>
 
-<!-- ===== Footer ===== -->
+<!-- FOOTER -->
 <footer>
-  © First Standard Title Limited (FSTL) | Digital Trust • Verification • Infrastructure
+  First Standard Title Limited (FSTL) • Digital Trust & Capital OS<br>
+  Redeeming the Shadows. Confirming the Truth.<br>
+  &copy; 2026 FSTL
 </footer>
-
-<script>
-  // ===== AI Verification Simulation =====
-  function simulateVerification() {
-    const ref = document.getElementById('fref').value.trim();
-    const result = document.getElementById('verifyResult');
-    if(ref === '') {
-      result.innerHTML = '❌ Please enter a valid FSTL reference.';
-      return;
-    }
-    // Simulated verification result
-    const verificationCode = 'FSTL-' + Math.floor(Math.random()*900000+100000);
-    const timestamp = new Date().toLocaleString();
-    result.innerHTML = `✔ Verified! <br>Verification Code: ${verificationCode}<br>Timestamp: ${timestamp}<br>PDF/QR simulation ready.`;
-  }
-</script>
 
 </body>
 </html>

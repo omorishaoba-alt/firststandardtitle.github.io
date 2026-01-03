@@ -1,151 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FSTL – First Standard Title Limited</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FSTL – Digital Title Verification, Trust Infrastructure & Zero-Cost Revenue Engine">
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; line-height:1.6; }
-    nav { background:#000; padding:15px; position:sticky; top:0; }
-    nav a { color:#fff; margin-right:15px; text-decoration:none; font-weight:bold; }
-    section { padding:40px 20px; background:#fff; margin-bottom:10px; }
-    h1,h2 { color:#000; }
-    .cta { display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; margin-top:10px; }
-    .box { background:#eee; padding:20px; margin-top:15px; }
-    footer { background:#000; color:#fff; text-align:center; padding:20px; font-size:14px; }
-    input, select, button { padding:10px; margin-top:10px; width:100%; }
-    .output-box { background:#ddf; padding:15px; margin-top:10px; }
-  </style>
+<meta charset="UTF-8">
+<title>FSTL – First Standard Title Limited</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FSTL – Digital Title Verification OS, Trust Infrastructure & Revenue Engine">
+<style>
+  body {font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111;}
+  nav {background:#000; padding:15px; position:sticky; top:0; z-index:999;}
+  nav a {color:#fff; margin-right:15px; text-decoration:none; font-weight:bold;}
+  section {padding:40px 20px; background:#fff; margin-bottom:10px;}
+  h1,h2 {color:#000;}
+  .cta {display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; margin-top:10px;}
+  .box {background:#eee; padding:20px; margin-top:15px;}
+  input, select, textarea {width:100%; padding:10px; margin-top:10px; margin-bottom:10px;}
+  footer {background:#000; color:#fff; text-align:center; padding:20px; font-size:14px;}
+</style>
+<script>
+// Simulated AI Search
+function aiSearch() {
+  let ref = document.getElementById('searchRef').value;
+  if(ref === "") { alert("Enter your verification reference."); return; }
+  // Placeholder for ChatGPT API or internal logic
+  alert("Reference " + ref + " is VERIFIED. PDF/QR receipt ready.");
+}
+
+// Simulated Institutional API call
+function institutionVerify() {
+  let assetVal = parseFloat(document.getElementById('assetVal').value);
+  if(isNaN(assetVal) || assetVal<=0) { alert("Enter valid asset value."); return; }
+  let fee = assetVal * 0.05;
+  alert("Institutional verification successful. Fee: ₦" + fee.toLocaleString());
+}
+
+// Simulated Retail Transaction
+function retailVerify() {
+  alert("Retail verification complete. Flat rate: ₦50,000. PDF & QR receipt generated.");
+}
+</script>
 </head>
 <body>
 
 <nav>
   <a href="#home">Home</a>
   <a href="#retail">Retail</a>
-  <a href="#institutions">Institutions</a>
+  <a href="#institution">Institutions</a>
   <a href="#agents">Agents</a>
-  <a href="#payments">Payments</a>
-  <a href="#faq">FAQ</a>
+  <a href="#payment">Payments</a>
+  <a href="#search">AI Search</a>
+  <a href="#about">About FSTL OS</a>
 </nav>
 
 <section id="home">
   <h1>First Standard Title Limited (FSTL)</h1>
   <p>
-    FSTL is Nigeria’s trust infrastructure for digital title verification,
-    transaction validation, and institutional confidence.
+    FSTL is Nigeria’s first Digital Title Verification OS – transforming assets into capital, transactions into verifiable value, and empowering individuals, agents, and institutions.
   </p>
   <div class="box">
     <strong>Operating Principle:</strong><br>
-    Input → Transaction → Output<br>
+    INPUT → TRANSACTION → OUTPUT<br>
     Zero Infrastructure. Immediate Revenue. Silent Scale.
   </div>
 </section>
 
 <section id="retail">
-  <h2>Retail Users – Verification & Capitalization</h2>
-  <p>FSTL empowers individuals to transform assets into capital using our OS.</p>
+  <h2>Retail Verification & Capital Access</h2>
+  <p>
+    Individuals can verify titles and assets, receive instant PDF/QR receipts, and use them as collateral to secure loans or other financial products.
+  </p>
   <div class="box">
-    <p><strong>Flat Verification Rate:</strong> ₦50,000</p>
-    <p><strong>Process:</strong></p>
-    <ul>
-      <li>Step 1: Submit your asset or title for verification.</li>
-      <li>Step 2: Receive AI-guided instructions for verification.</li>
-      <li>Step 3: Receive PDF receipt + QR code for collateralization.</li>
-      <li>Step 4: Use verified title to apply for loans, insurance, or investments.</li>
-    </ul>
-    <div>
-      <label>Enter Asset or Title Reference:</label>
-      <input type="text" id="retailRef" placeholder="FSTL-REF-XXXX">
-      <button onclick="generateRetailReceipt()">Generate PDF & QR</button>
-      <div class="output-box" id="retailOutput"></div>
-    </div>
+    <strong>Flat Rate:</strong> ₦50,000 per verification<br>
+    <strong>Steps:</strong>
+    <ol>
+      <li>Submit your asset/title.</li>
+      <li>FSTL verifies and generates PDF/QR receipt.</li>
+      <li>Use the receipt to access capital or collateralized services.</li>
+    </ol>
+    <button class="cta" onclick="retailVerify()">Verify Now</button>
   </div>
 </section>
 
-<section id="institutions">
-  <h2>Institutional & Government Users</h2>
-  <p>FSTL enables financial institutions to transform assets into investment-grade capital:</p>
+<section id="institution">
+  <h2>Institutional & Government Verification</h2>
+  <p>
+    Banks, financial institutions, and government entities can convert assets into investment-grade capital (ABS, MBS, corporate bonds, municipal bonds) using FSTL verification.
+  </p>
   <div class="box">
-    <ul>
-      <li>ABS, MBS, corporate bonds, municipal bonds</li>
-      <li>Portfolio verification for bank lending</li>
-      <li>Transparent and auditable digital verification</li>
-      <li>Fee: 5% of total asset value</li>
-    </ul>
-    <div>
-      <label>Enter Portfolio Reference:</label>
-      <input type="text" id="instRef" placeholder="FSTL-INST-XXXX">
-      <label>Asset Value (₦):</label>
-      <input type="number" id="instValue" placeholder="₦">
-      <button onclick="generateInstitutionReceipt()">Generate Verification</button>
-      <div class="output-box" id="instOutput"></div>
-    </div>
+    <strong>Rate:</strong> 5% of asset value<br>
+    <input type="number" id="assetVal" placeholder="Enter total asset value">
+    <button class="cta" onclick="institutionVerify()">Verify Institutionally</button>
   </div>
 </section>
 
 <section id="agents">
   <h2>Agents & Miners</h2>
-  <p>Agents generate income immediately by onboarding clients, processing verifications, and submitting transactions.</p>
+  <p>
+    Agents generate income by onboarding clients, submitting verification transactions, and receiving instant commission with PDF receipts for clients.
+  </p>
   <div class="box">
     <strong>Agent Benefits:</strong>
     <ul>
       <li>Immediate commission confirmation</li>
-      <li>Direct bank-backed receipts</li>
-      <li>No app install required (smartphone only)</li>
+      <li>Direct bank-backed receipts for clients</li>
       <li>Zero capital entry</li>
+      <li>Trackable referral network</li>
     </ul>
   </div>
 </section>
 
-<section id="payments">
-  <h2>Payments – Direct Bank Transfer</h2>
+<section id="payment">
+  <h2>Direct Bank Payments</h2>
   <p>
-    All payments are made directly to the FSTL bank account. No intermediaries.
-    PDF receipts + QR codes serve as proof of verification.
+    All payments are made directly to the FSTL bank account – no third-party intermediaries.
   </p>
   <div class="box">
-    <strong>Bank Account:</strong><br>
     Bank: <em>[Your Bank Name]</em><br>
     Account Name: <em>First Standard Title Limited</em><br>
     Account Number: <em>[XXXXXXX]</em><br>
-    <strong>Use your Verification Reference as Narration</strong>
+    <strong>Use your Reference ID as narration</strong>
   </div>
 </section>
 
-<section id="faq">
-  <h2>FAQs</h2>
-  <div class="box">
-    <p><strong>Q:</strong> How does FSTL transform assets into capital?<br>
-       <strong>A:</strong> Verified titles and assets receive PDF receipts + QR codes that banks recognize as clean collateral, allowing loans and investment creation.</p>
-    <p><strong>Q:</strong> Can I use FSTL as an individual without an agent?<br>
-       <strong>A:</strong> Yes, retail users can process verifications directly at the flat rate of ₦50,000.</p>
-    <p><strong>Q:</strong> How do institutions use FSTL?<br>
-       <strong>A:</strong> Submit portfolio via secure API or interface. Receive verified digital receipts recognized for investment-grade purposes. Fee: 5% of asset value.</p>
-  </div>
+<section id="search">
+  <h2>FSTL AI Search & Verification</h2>
+  <p>Search and validate your verification reference instantly using AI-assisted guidance.</p>
+  <input type="text" id="searchRef" placeholder="Enter your FSTL reference ID">
+  <button class="cta" onclick="aiSearch()">Search & Verify</button>
+</section>
+
+<section id="about">
+  <h2>About FSTL OS</h2>
+  <p>
+    FSTL is an open Operating System for digital asset verification, title insurance, and collateralized capital access. It is designed to:
+  </p>
+  <ul>
+    <li>Empower individuals to use their assets to generate capital.</li>
+    <li>Enable agents to build scalable income models.</li>
+    <li>Allow institutions to convert verified assets into investment-grade capital.</li>
+    <li>Operate silently with zero infrastructure costs for 12–24 months.</li>
+    <li>Provide real-time, verifiable PDF/QR receipts and AI-backed verification support.</li>
+  </ul>
+  <p>
+    FSTL is Nigeria’s pilot case – perfecting the OS here enables rollout to other underdeveloped countries. It is the Redeemer of Shadows and the Guardian of Truth.
+  </p>
 </section>
 
 <footer>
   © First Standard Title Limited (FSTL)<br>
-  Digital Trust • Verification • Infrastructure
+  Digital Trust • Verification • Infrastructure • OS
 </footer>
-
-<script>
-  // Dummy front-end handlers for PDF & QR (simulation)
-  function generateRetailReceipt() {
-    const ref = document.getElementById('retailRef').value || 'FSTL-REF-XXXX';
-    const output = `✅ Retail verification complete.<br>Reference: <strong>${ref}</strong><br>PDF + QR generated for collateralization.`;
-    document.getElementById('retailOutput').innerHTML = output;
-  }
-
-  function generateInstitutionReceipt() {
-    const ref = document.getElementById('instRef').value || 'FSTL-INST-XXXX';
-    const value = document.getElementById('instValue').value || '0';
-    const fee = (value * 0.05).toLocaleString();
-    const output = `✅ Institutional verification complete.<br>Reference: <strong>${ref}</strong><br>Asset Value: ₦${value}<br>Fee (5%): ₦${fee}<br>PDF + QR generated for bank-ready collateralization.`;
-    document.getElementById('instOutput').innerHTML = output;
-  }
-</script>
 
 </body>
 </html>

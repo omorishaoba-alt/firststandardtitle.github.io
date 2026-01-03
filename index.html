@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="FSTL – Digital Title Verification, Trust Infrastructure & Zero-Cost Revenue Engine">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; color: #111; line-height: 1.6; }
-    nav { background: #000; padding: 15px; position: sticky; top: 0; z-index: 1000; }
-    nav a { color: #fff; margin-right: 15px; text-decoration: none; font-weight: bold; }
-    section { padding: 40px 20px; background: #fff; margin-bottom: 10px; }
-    h1, h2 { color: #000; }
-    .cta { display: inline-block; padding: 12px 20px; background: #000; color: #fff; text-decoration: none; margin-top: 10px; }
-    .box { background: #eee; padding: 20px; margin-top: 15px; }
-    input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 10px; }
-    button { padding: 12px 20px; background: #000; color: #fff; border: none; cursor: pointer; }
-    footer { background: #000; color: #fff; text-align: center; padding: 20px; font-size: 14px; }
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#111; line-height:1.6; }
+    nav { background:#000; padding:15px; position:sticky; top:0; }
+    nav a { color:#fff; margin-right:15px; text-decoration:none; font-weight:bold; }
+    section { padding:40px 20px; background:#fff; margin-bottom:10px; }
+    h1,h2 { color:#000; }
+    .cta { display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; margin-top:10px; }
+    .box { background:#eee; padding:20px; margin-top:15px; }
+    footer { background:#000; color:#fff; text-align:center; padding:20px; font-size:14px; }
+    input, select, button { padding:10px; margin-top:10px; width:100%; }
+    .output-box { background:#ddf; padding:15px; margin-top:10px; }
   </style>
 </head>
 <body>
@@ -23,134 +23,106 @@
 <nav>
   <a href="#home">Home</a>
   <a href="#retail">Retail</a>
-  <a href="#agents">Agents</a>
   <a href="#institutions">Institutions</a>
-  <a href="#faq">FAQs</a>
-  <a href="#contact">Contact</a>
+  <a href="#agents">Agents</a>
+  <a href="#payments">Payments</a>
+  <a href="#faq">FAQ</a>
 </nav>
 
-<!-- Home Section -->
 <section id="home">
   <h1>First Standard Title Limited (FSTL)</h1>
-  <p>FSTL is Nigeria’s trust infrastructure for digital title verification, transaction validation, and institutional confidence.</p>
+  <p>
+    FSTL is Nigeria’s trust infrastructure for digital title verification,
+    transaction validation, and institutional confidence.
+  </p>
   <div class="box">
     <strong>Operating Principle:</strong><br>
-    Input → Transformation → Output<br>
+    Input → Transaction → Output<br>
     Zero Infrastructure. Immediate Revenue. Silent Scale.
   </div>
 </section>
 
-<!-- Retail Section -->
 <section id="retail">
-  <h2>Retail Users</h2>
-  <p>Transform your assets into bankable, verified collateral. Use FSTL to secure loans and convert verification into capital.</p>
+  <h2>Retail Users – Verification & Capitalization</h2>
+  <p>FSTL empowers individuals to transform assets into capital using our OS.</p>
   <div class="box">
-    <strong>Flat Rate:</strong> ₦50,000 per verification<br>
-    <strong>Steps:</strong>
-    <ol>
-      <li>Submit documents for verification</li>
-      <li>Receive AI-assisted guidance on completion</li>
-      <li>Get PDF receipt & QR code for bank-ready proof</li>
-      <li>Use verification to access loans or investment opportunities</li>
-    </ol>
+    <p><strong>Flat Verification Rate:</strong> ₦50,000</p>
+    <p><strong>Process:</strong></p>
+    <ul>
+      <li>Step 1: Submit your asset or title for verification.</li>
+      <li>Step 2: Receive AI-guided instructions for verification.</li>
+      <li>Step 3: Receive PDF receipt + QR code for collateralization.</li>
+      <li>Step 4: Use verified title to apply for loans, insurance, or investments.</li>
+    </ul>
+    <div>
+      <label>Enter Asset or Title Reference:</label>
+      <input type="text" id="retailRef" placeholder="FSTL-REF-XXXX">
+      <button onclick="generateRetailReceipt()">Generate PDF & QR</button>
+      <div class="output-box" id="retailOutput"></div>
+    </div>
   </div>
-
-  <form id="retailForm">
-    <label>Full Name</label>
-    <input type="text" name="name" required>
-    <label>Email / Phone</label>
-    <input type="text" name="contact" required>
-    <label>Asset / Title Description</label>
-    <textarea name="asset" rows="4" required></textarea>
-    <label>Upload Documents</label>
-    <input type="file" name="documents" required>
-    <button type="submit">Submit Verification</button>
-  </form>
 </section>
 
-<!-- Agents Section -->
-<section id="agents">
-  <h2>Agents / Miners</h2>
-  <p>Agents earn by onboarding clients, processing verifications, and submitting transactions through FSTL.</p>
+<section id="institutions">
+  <h2>Institutional & Government Users</h2>
+  <p>FSTL enables financial institutions to transform assets into investment-grade capital:</p>
   <div class="box">
-    <strong>Benefits:</strong>
+    <ul>
+      <li>ABS, MBS, corporate bonds, municipal bonds</li>
+      <li>Portfolio verification for bank lending</li>
+      <li>Transparent and auditable digital verification</li>
+      <li>Fee: 5% of total asset value</li>
+    </ul>
+    <div>
+      <label>Enter Portfolio Reference:</label>
+      <input type="text" id="instRef" placeholder="FSTL-INST-XXXX">
+      <label>Asset Value (₦):</label>
+      <input type="number" id="instValue" placeholder="₦">
+      <button onclick="generateInstitutionReceipt()">Generate Verification</button>
+      <div class="output-box" id="instOutput"></div>
+    </div>
+  </div>
+</section>
+
+<section id="agents">
+  <h2>Agents & Miners</h2>
+  <p>Agents generate income immediately by onboarding clients, processing verifications, and submitting transactions.</p>
+  <div class="box">
+    <strong>Agent Benefits:</strong>
     <ul>
       <li>Immediate commission confirmation</li>
       <li>Direct bank-backed receipts</li>
-      <li>No upfront capital required</li>
-      <li>Scalable network-based income</li>
+      <li>No app install required (smartphone only)</li>
+      <li>Zero capital entry</li>
     </ul>
   </div>
-
-  <form id="agentForm">
-    <label>Agent Name</label>
-    <input type="text" name="name" required>
-    <label>Agency / Location</label>
-    <input type="text" name="location" required>
-    <label>Upload Identification</label>
-    <input type="file" name="id" required>
-    <button type="submit">Register Agent</button>
-  </form>
 </section>
 
-<!-- Institutions Section -->
-<section id="institutions">
-  <h2>Institutional & Government Users</h2>
-  <p>Transform assets into investment-grade capital such as ABS, MBS, corporate bonds, municipal bonds, and more.</p>
+<section id="payments">
+  <h2>Payments – Direct Bank Transfer</h2>
+  <p>
+    All payments are made directly to the FSTL bank account. No intermediaries.
+    PDF receipts + QR codes serve as proof of verification.
+  </p>
   <div class="box">
-    <strong>Rate:</strong> 5% of asset value<br>
-    <strong>Workflow:</strong>
-    <ol>
-      <li>Submit asset portfolio</li>
-      <li>FSTL verification & audit</li>
-      <li>Receive bank-ready collateral & capital access</li>
-      <li>Optional white-label integration for institutions</li>
-    </ol>
+    <strong>Bank Account:</strong><br>
+    Bank: <em>[Your Bank Name]</em><br>
+    Account Name: <em>First Standard Title Limited</em><br>
+    Account Number: <em>[XXXXXXX]</em><br>
+    <strong>Use your Verification Reference as Narration</strong>
   </div>
-
-  <form id="institutionForm">
-    <label>Institution Name</label>
-    <input type="text" name="institution" required>
-    <label>Contact Person</label>
-    <input type="text" name="contact" required>
-    <label>Asset Portfolio Description</label>
-    <textarea name="assets" rows="4" required></textarea>
-    <label>Upload Portfolio Documents</label>
-    <input type="file" name="portfolio" required>
-    <button type="submit">Submit Portfolio</button>
-  </form>
 </section>
 
-<!-- FAQs Section -->
 <section id="faq">
   <h2>FAQs</h2>
   <div class="box">
-    <strong>Q:</strong> What is FSTL?<br>
-    <strong>A:</strong> FSTL is an operational system for title verification, collateralization, and capital access in Nigeria.
+    <p><strong>Q:</strong> How does FSTL transform assets into capital?<br>
+       <strong>A:</strong> Verified titles and assets receive PDF receipts + QR codes that banks recognize as clean collateral, allowing loans and investment creation.</p>
+    <p><strong>Q:</strong> Can I use FSTL as an individual without an agent?<br>
+       <strong>A:</strong> Yes, retail users can process verifications directly at the flat rate of ₦50,000.</p>
+    <p><strong>Q:</strong> How do institutions use FSTL?<br>
+       <strong>A:</strong> Submit portfolio via secure API or interface. Receive verified digital receipts recognized for investment-grade purposes. Fee: 5% of asset value.</p>
   </div>
-  <div class="box">
-    <strong>Q:</strong> How much does retail verification cost?<br>
-    <strong>A:</strong> Flat rate of ₦50,000 per asset.
-  </div>
-  <div class="box">
-    <strong>Q:</strong> How do institutions pay?<br>
-    <strong>A:</strong> 5% of total asset value per submission.
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact FSTL</h2>
-  <p>Reach out for support, partnerships, or enquiries.</p>
-  <form id="contactForm">
-    <label>Name</label>
-    <input type="text" name="name" required>
-    <label>Email / Phone</label>
-    <input type="text" name="contact" required>
-    <label>Message</label>
-    <textarea name="message" rows="4" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
 </section>
 
 <footer>
@@ -159,14 +131,20 @@
 </footer>
 
 <script>
-  // Placeholder: submit handlers
-  const forms = ["retailForm", "agentForm", "institutionForm", "contactForm"];
-  forms.forEach(id => {
-    document.getElementById(id).addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Submission received. Backend integration pending.");
-    });
-  });
+  // Dummy front-end handlers for PDF & QR (simulation)
+  function generateRetailReceipt() {
+    const ref = document.getElementById('retailRef').value || 'FSTL-REF-XXXX';
+    const output = `✅ Retail verification complete.<br>Reference: <strong>${ref}</strong><br>PDF + QR generated for collateralization.`;
+    document.getElementById('retailOutput').innerHTML = output;
+  }
+
+  function generateInstitutionReceipt() {
+    const ref = document.getElementById('instRef').value || 'FSTL-INST-XXXX';
+    const value = document.getElementById('instValue').value || '0';
+    const fee = (value * 0.05).toLocaleString();
+    const output = `✅ Institutional verification complete.<br>Reference: <strong>${ref}</strong><br>Asset Value: ₦${value}<br>Fee (5%): ₦${fee}<br>PDF + QR generated for bank-ready collateralization.`;
+    document.getElementById('instOutput').innerHTML = output;
+  }
 </script>
 
 </body>
